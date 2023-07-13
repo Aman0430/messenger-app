@@ -12,15 +12,15 @@ export default function Home() {
         py-12 
         sm:px-6 
         lg:px-8 
-        bg-purple-200
+        bg-slate-900
       "
     >
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Image
-          height={48}
-          width={48}
+          height={52}
+          width={52}
           className="mx-auto w-auto"
-          src="/images/logo.png"
+          src="/images/logo2.png"
           alt="Logo"
         />
         <h2
@@ -30,7 +30,7 @@ export default function Home() {
             text-3xl 
             font-bold 
             tracking-tight 
-            text-gray-800
+            text-white
           "
         >
           Sign in to your account

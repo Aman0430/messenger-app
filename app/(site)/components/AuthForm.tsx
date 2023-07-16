@@ -15,15 +15,16 @@ import { toast } from "react-hot-toast";
 type Variant = "LOGIN" | "REGISTER";
 
 const AuthForm = () => {
+  const session = useSession();
   const router = useRouter();
   const [variant, setVariant] = useState<Variant>("LOGIN");
   const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   if (session?.status === 'authenticated') {
-  //     router.push('/conversations')
-  //   }
-  // }, [session?.status, router]);
+  useEffect(() => {
+    if (session?.status === "authenticated") {
+      router.push("/users");
+    }
+  }, [session?.status, router]);
 
   const toggleVariant = useCallback(() => {
     if (variant === "LOGIN") {
@@ -81,7 +82,7 @@ const AuthForm = () => {
           }
 
           if (callback?.ok) {
-            router.push("/conversations");
+            router.push("/users");
           }
         })
         .finally(() => setIsLoading(false));

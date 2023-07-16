@@ -30,7 +30,7 @@ export default function Home() {
             text-3xl 
             font-bold 
             tracking-tight 
-            text-white
+            text-slate-200
           "
         >
           Sign in to your account

@@ -30,13 +30,13 @@ const UserBox: React.FC<UserBoxProps> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="w-full relative flex items-center space-x-3 bg-slate-200 p-2 mb-1 hover:bg-slate-400 rounded-3xl transition cursor-pointer"
+      className="w-full relative flex items-center space-x-3 bg-slate-900 p-2 mb-1 hover:bg-slate-700 rounded-lg transition cursor-pointer"
     >
       <Avatar user={data} />
       <div className="min-w-0 flex-1">
         <div className="focus:outline-none">
           <div className="flex justify-between items-center mb-1">
-            <p className="text-sm font-medium text-slate-950">{data.name}</p>
+            <p className="text-sm font-medium text-slate-200">{data.name}</p>
           </div>
         </div>
       </div>

@@ -1,93 +1,51 @@
-# Real-Time Messenger Clone: Next.js 13, React, Tailwind, Prisma, MongoDB, NextAuth, Pusher (2023)
+Messenger App
+This is a real-time messenger app built using Next.js, Tailwind CSS, Prisma, MongoDB, Pusher, and Cloudinary.
 
-![Copy of Copy of Fullstack Twitter Clone (1)](https://user-images.githubusercontent.com/23248726/236631198-90414da5-ee43-46a9-8898-70b003bcd83d.png)
+Features
+Real-time messaging: Users can send and receive messages in real-time.
+User authentication: Users can sign up and log in to access the messaging functionality.
+Message attachments: Users can attach images to their messages using Cloudinary.
+Persistent data storage: Messages are stored in a MongoDB database using Prisma ORM.
+Technologies Used
+Next.js: A React framework for server-side rendering and building fast and scalable applications.
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
+Prisma: A modern ORM for Node.js and TypeScript that simplifies database access.
+MongoDB: A NoSQL database for storing message data.
+Pusher: A real-time messaging API that enables real-time communication between users.
+Cloudinary: A cloud-based media management platform for image and video upload and manipulation.
+Getting Started
+Clone the repository:
+bash
+Copy code
+git clone https://github.com/yourusername/messenger-app.git
+cd messenger-app
+Install dependencies:
+bash
+Copy code
+npm install
+Set up environment variables:
+Create a .env file in the root of the project and fill in the required values:
 
-
-This is a repository for a Real-Time Messenger Clone: Next.js 13, React, Tailwind, Prisma, MongoDB, NextAuth, Pusher.
-
-[VIDEO TUTORIAL](https://www.youtube.com/watch?v=PGPGcKBpAk8)
-
-Master the art of building a real-time Messenger clone using the latest web development technologies. In this comprehensive tutorial, we'll walk you through the process of creating a fully-functional and visually stunning chat application that rivals the best in the industry.
-
-Key Features:
-
-- Real-time messaging using Pusher
-- Message notifications and alerts
-- Tailwind design for sleek UI
-- Tailwind animations and transition effects
-- Full responsiveness for all devices
-- Credential authentication with NextAuth
-- Google authentication integration
-- Github authentication integration
-- File and image upload using Cloudinary CDN
-- Client form validation and handling using react-hook-form
-- Server error handling with react-toast
-- Message read receipts
-- Online/offline user status
-- Group chats and one-on-one messaging
-- Message attachments and file sharing
-- User profile customization and settings
-- How to write POST, GET, and DELETE routes in route handlers (app/api)
-- How to fetch data in server React components by directly accessing the database (WITHOUT API! like Magic!)
-- Handling relations between Server and Child components in a real-time environment
-- Creating and managing chat rooms and channels
-
-Whether you're an experienced developer looking to expand your skillset or a beginner eager to learn the latest web development technologies, this tutorial has something for everyone. Join us on this exciting journey and take your web development skills to new heights!
-
-
-### Prerequisites
-
-**Node version 14.x**
-
-### Cloning the repository
-
-```shell
-git clone https://github.com/AntonioErdeljac/next13-messenger.git
-```
-
-### Install packages
-
-```shell
-npm i
-```
-
-### Setup .env file
-
-
-```js
-DATABASE_URL=
-NEXTAUTH_SECRET=
-
-NEXT_PUBLIC_PUSHER_APP_KEY=
-PUSHER_APP_ID=
-PUSHER_SECRET=
-
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
-
-GITHUB_ID=
-GITHUB_SECRET=
-
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-```
-
-### Setup Prisma
-
-```shell
-npx prisma db push
-
-```
-
-### Start the app
-
-```shell
+makefile
+Copy code
+MONGODB_URI=your_mongodb_uri
+PUSHER_APP_ID=your_pusher_app_id
+PUSHER_KEY=your_pusher_key
+PUSHER_SECRET=your_pusher_secret
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+Run the development server:
+bash
+Copy code
 npm run dev
-```
+Open your browser and go to http://localhost:3000 to access the application.
+Contributions
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-## Available commands
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Running commands with npm `npm run [command]`
-
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+Acknowledgments
+This app was created as part of a learning project and may contain code inspired by various tutorials and resources. Special thanks to the open-source community for their contributions and support.
+Happy messaging! 🚀

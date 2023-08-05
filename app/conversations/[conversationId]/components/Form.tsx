@@ -1,11 +1,11 @@
 "use client";
 
-import useConversation from "@/app/hooks/useConversation";
-import axios from "axios";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { HiPhoto } from "react-icons/hi2";
+import { HiPaperAirplane, HiPhoto } from "react-icons/hi2";
 import MessageInput from "./MessageInput";
-import { HiPaperAirplane } from "react-icons/hi2";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import axios from "axios";
+import { CldUploadButton } from "next-cloudinary";
+import useConversation from "@/app/hooks/useConversation";
 
 const Form = () => {
   const { conversationId } = useConversation();
@@ -16,20 +16,46 @@ const Form = () => {
     setValue,
     formState: { errors },
   } = useForm<FieldValues>({
-    defaultValues: { message: "" },
+    defaultValues: {
+      message: "",
+    },
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setValue("message", "", { shouldValidate: true });
     axios.post("/api/messages", {
       ...data,
-      conversationId,
+      conversationId: conversationId,
+    });
+  };
+
+  const handleUpload = (result: any) => {
+    axios.post("/api/messages", {
+      image: result.info.secure_url,
+      conversationId: conversationId,
     });
   };
 
   return (
-    <div className="text-slate-200 px-4 py-4 bg-slate-900 rounded-2xl shadow-slate-800 flex items-center gap-2 lg:gap-4 w-full shadow-inner border-t-0">
-      <HiPhoto size={30} className="text-slate-200" />
+    <div
+      className="
+        py-4 
+        px-4 
+        bg-slate-900 
+        flex 
+        items-center 
+        gap-2 
+        lg:gap-4 
+        w-full
+      "
+    >
+      <CldUploadButton
+        options={{ maxFiles: 1 }}
+        onUpload={handleUpload}
+        uploadPreset="eel60iu6"
+      >
+        <HiPhoto size={30} className="text-slate-500" />
+      </CldUploadButton>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex items-center gap-2 lg:gap-4 w-full"
@@ -43,9 +69,16 @@ const Form = () => {
         />
         <button
           type="submit"
-          className="rounded-full bg-slate-500 hover:bg-slate-700 p-2 cursor-pointer transition "
+          className="
+            rounded-full 
+            p-2 
+            bg-slate-500 
+            cursor-pointer 
+            hover:bg-slate-600 
+            transition
+          "
         >
-          <HiPaperAirplane size={18} className="text-black" />
+          <HiPaperAirplane size={18} className="text-white" />
         </button>
       </form>
     </div>

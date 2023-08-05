@@ -1,6 +1,5 @@
-"use client";
-
 import Link from "next/link";
+
 import clsx from "clsx";
 
 interface MobileItemProps {
@@ -24,24 +23,24 @@ const MobileItem: React.FC<MobileItemProps> = ({
 
   return (
     <Link
-      onClick={onClick}
+      onClick={handleClick}
       href={href}
       className={clsx(
         `
-                group
-                flex
-                gap-x-3
-                text-sm
-                leading-6
-                font-semibold
-                w-full
-                justify-center
-                p-4
-                text-slate-200
-                hover:text-white 
-                hover:bg-slate-800
-            `,
-        active && "bg-slate-900 text-black"
+        group 
+        flex 
+        gap-x-3 
+        text-sm 
+        leading-6 
+        font-semibold 
+        w-full 
+        justify-center 
+        p-4 
+        text-gray-500 
+        hover:text-black 
+        hover:bg-slate-700
+      `,
+        active && "bg-slate-700 text-black"
       )}
     >
       <Icon className="h-6 w-6" />

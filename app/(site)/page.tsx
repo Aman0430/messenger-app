@@ -3,6 +3,7 @@ import AuthForm from "./components/AuthForm";
 
 const Auth = () => {
   return (
+    // auth page
     <div
       className="
         flex 
